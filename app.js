@@ -12,7 +12,7 @@ let appVersions = fs.readdirSync(apiPath).filter((file) => {
 });
 
 app.set('port', (process.env.PORT || 5000));
-app.set('mongouri', (process.env.MONGO_URI || config.mongouri))
+app.set('mongouri', (process.env.MONGODB_URI || config.mongouri))
 
 mongoose.connect(app.get('mongouri'));
 mongoose.Promise = global.Promise;
