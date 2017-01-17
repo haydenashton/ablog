@@ -16,19 +16,9 @@ app.set('mongouri', (process.env.MONGODB_URI || config.mongouri))
 
 mongoose.connect(app.get('mongouri'));
 mongoose.Promise = global.Promise;
-app.locals.title = config.title;
 
 app.use(express.static(__dirname + '/public'));
-
 app.use(bodyParser.json());
-
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
-app.get('/', function(request, response) {
-  response.render('index');
-});
 
 appVersions.forEach((version) => {
   app.use(`/api/${version}`, require(path.join(__dirname, 'api', version)).routes);
