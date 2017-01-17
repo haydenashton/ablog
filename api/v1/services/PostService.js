@@ -1,4 +1,5 @@
-let Post = require('../models/Post');
+let mongoose = require('mongoose');
+let Post = mongoose.models.Post;
 
 class PostService {
   get(postId) {

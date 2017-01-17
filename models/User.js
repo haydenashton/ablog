@@ -5,6 +5,10 @@ let userSchema = new mongoose.Schema({
   name: {
     first: String,
     last: String
+  },
+  githubId: {
+    type: String,
+    unique: true
   }
 }, options);
 

@@ -1,4 +1,5 @@
-let Comment = require('../models/Comment');
+let mongoose = require('mongoose');
+let Comment = mongoose.models.Comment;
 
 class CommentService {
   get(commentId) {

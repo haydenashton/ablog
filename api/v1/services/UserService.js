@@ -1,4 +1,5 @@
-let User = require('../models/User');
+let mongoose = require('mongoose');
+let User = mongoose.models.User;
 
 class UserService {
   get(userId) {
