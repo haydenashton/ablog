@@ -9,6 +9,8 @@ class CommentController {
   }
 
   create(req, res, next) {
+    req.body.user = req.user._id;
+
     commentService.create(req.body).then(comment => {
       res.json(comment);
     });

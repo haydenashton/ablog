@@ -7,8 +7,10 @@
   },
   "main": "app.js",
   "scripts": {
+    "bundle": "./node_modules/browserify/bin/cmd.js ./public/js/src/main.js > ./public/js/dist/build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "postinstall": "npm run bundle"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,11 @@
     "express-session": "^1.14.2",
     "mongoose": "^4.7.7",
     "passport": "^0.3.2",
-    "passport-github": "^1.1.0"
+    "passport-github": "^1.1.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "browserify": "^13.3.0"
   }
 }

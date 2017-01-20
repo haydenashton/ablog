@@ -9,6 +9,8 @@ class PostController {
   }
 
   create(req, res, next) {
+    req.body.user = req.user._id;
+
     postService.create(req.body).then(post => {
       res.json(post);
     });
